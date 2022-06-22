@@ -1,16 +1,28 @@
 server {
   listen 80;
+  error_page 404 /404
+
+  location /404 {
+    root /var/www/dvernoi_region;
+    index 404.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /404.html;
+  }
 
   location / {
-  root /var/www/dvernoi_region;
-  index index.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /index.html;
-}
+    root /var/www/dvernoi_region;
+    index index.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /index.html;
+  }
 
   location /company {
     root /var/www/dvernoi_region;
@@ -24,6 +36,17 @@ server {
   }
 
   location /cooperation {
+    root /var/www/dvernoi_region;
+    index cooperation.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /cooperation.html;
+  }
+
+  location /delivery {
     root /var/www/dvernoi_region;
     index cooperation.html;
     proxy_http_version 1.1;
@@ -89,7 +112,7 @@ server {
     try_files $uri $uri/ /catalog.html;
   }
 
-  location /catalog/doors {
+  location ~* ^/catalog/doors/(.*) {
     root /var/www/dvernoi_region;
     index catalog-list.html;
     proxy_http_version 1.1;
@@ -100,7 +123,7 @@ server {
     try_files $uri $uri/ /catalog-list.html;
   }
 
-  location /catalog/iron-doors {
+  location ~* ^/catalog/iron-doors/(.*) {
     root /var/www/dvernoi_region;
     index catalog-list.html;
     proxy_http_version 1.1;
@@ -111,7 +134,7 @@ server {
     try_files $uri $uri/ /catalog-list.html;
   }
 
-  location /catalog/accessories {
+  location ~* ^/catalog/accessories/(.*) {
     root /var/www/dvernoi_region;
     index catalog-list.html;
     proxy_http_version 1.1;
@@ -122,7 +145,7 @@ server {
     try_files $uri $uri/ /catalog-list.html;
   }
 
-  location /catalog/furniture {
+  location ~* ^/catalog/furniture/(.*) {
     root /var/www/dvernoi_region;
     index catalog-list.html;
     proxy_http_version 1.1;
@@ -133,7 +156,7 @@ server {
     try_files $uri $uri/ /catalog-list.html;
   }
 
-  location /doors {
+  location ~* ^/doors/(.*) {
     root /var/www/dvernoi_region;
     index product.html;
     proxy_http_version 1.1;
@@ -144,7 +167,7 @@ server {
     try_files $uri $uri/ /product.html;
   }
 
-  location /iron-doors {
+  location ~* ^/iron-doors/(.*) {
     root /var/www/dvernoi_region;
     index product.html;
     proxy_http_version 1.1;
@@ -155,7 +178,7 @@ server {
     try_files $uri $uri/ /product.html;
   }
 
-  location /accessories {
+  location ~* ^/accessories/(.*) {
     root /var/www/dvernoi_region;
     index product.html;
     proxy_http_version 1.1;
@@ -166,7 +189,7 @@ server {
     try_files $uri $uri/ /product.html;
   }
 
-  location /furniture {
+  location ~* ^/furniture/(.*) {
     root /var/www/dvernoi_region;
     index product.html;
     proxy_http_version 1.1;
@@ -189,7 +212,7 @@ server {
   }
 
   location /api {
-    proxy_pass http://localhost/:5000;
+    proxy_pass http://localhost:5000;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection 'upgrade';
