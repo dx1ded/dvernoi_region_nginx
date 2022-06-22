@@ -101,17 +101,6 @@ server {
     try_files $uri $uri/ /garantee.html;
   }
 
-  location /catalog {
-    root /var/www/dvernoi_region;
-    index catalog.html;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection 'upgrade';
-    proxy_set_header Host $host;
-    proxy_cache_bypass $http_upgrade;
-    try_files $uri $uri/ /catalog.html;
-  }
-
   location ~* ^/catalog/doors/(.*) {
     root /var/www/dvernoi_region;
     index catalog-list.html;
@@ -154,6 +143,17 @@ server {
     proxy_set_header Host $host;
     proxy_cache_bypass $http_upgrade;
     try_files $uri $uri/ /catalog-list.html;
+  }
+
+  location /catalog {
+    root /var/www/dvernoi_region;
+    index catalog.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /catalog.html;
   }
 
   location ~* ^/doors/(.*) {
