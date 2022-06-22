@@ -1,4 +1,7 @@
-location / {
+server {
+  listen 80;
+
+  location / {
   root /var/www/dvernoi_region;
   index index.html;
   proxy_http_version 1.1;
@@ -9,178 +12,179 @@ location / {
   try_files $uri $uri/ /index.html;
 }
 
-location /company {
-  root /var/www/dvernoi_region;
-  index company.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /company.html;
-}
+  location /company {
+    root /var/www/dvernoi_region;
+    index company.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /company.html;
+  }
 
-location /cooperation {
-  root /var/www/dvernoi_region;
-  index cooperation.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /cooperation.html;
-}
+  location /cooperation {
+    root /var/www/dvernoi_region;
+    index cooperation.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /cooperation.html;
+  }
 
-location /info {
-  root /var/www/dvernoi_region;
-  index info.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /info.html;
-}
+  location /info {
+    root /var/www/dvernoi_region;
+    index info.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /info.html;
+  }
 
-location /installation {
-  root /var/www/dvernoi_region;
-  index installation.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /installation.html;
-}
+  location /installation {
+    root /var/www/dvernoi_region;
+    index installation.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /installation.html;
+  }
 
-location /pay {
-  root /var/www/dvernoi_region;
-  index pay.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /pay.html;
-}
+  location /pay {
+    root /var/www/dvernoi_region;
+    index pay.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /pay.html;
+  }
 
-location /garantee {
-  root /var/www/dvernoi_region;
-  index garantee.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /garantee.html;
-}
+  location /garantee {
+    root /var/www/dvernoi_region;
+    index garantee.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /garantee.html;
+  }
 
-location /catalog {
-  root /var/www/dvernoi_region;
-  index catalog.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /catalog.html;
-}
+  location /catalog {
+    root /var/www/dvernoi_region;
+    index catalog.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /catalog.html;
+  }
 
-location /catalog/doors {
-  root /var/www/dvernoi_region;
-  index catalog-list.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /catalog-list.html;
-}
+  location /catalog/doors {
+    root /var/www/dvernoi_region;
+    index catalog-list.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /catalog-list.html;
+  }
 
-location /catalog/iron-doors {
-  root /var/www/dvernoi_region;
-  index catalog-list.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /catalog-list.html;
-}
+  location /catalog/iron-doors {
+    root /var/www/dvernoi_region;
+    index catalog-list.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /catalog-list.html;
+  }
 
-location /catalog/accessories {
-  root /var/www/dvernoi_region;
-  index catalog-list.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /catalog-list.html;
-}
+  location /catalog/accessories {
+    root /var/www/dvernoi_region;
+    index catalog-list.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /catalog-list.html;
+  }
 
-location /catalog/furniture {
-  root /var/www/dvernoi_region;
-  index catalog-list.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /catalog-list.html;
-}
+  location /catalog/furniture {
+    root /var/www/dvernoi_region;
+    index catalog-list.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /catalog-list.html;
+  }
 
-location /doors {
-  root /var/www/dvernoi_region;
-  index product.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /product.html;
-}
+  location /doors {
+    root /var/www/dvernoi_region;
+    index product.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /product.html;
+  }
 
-location /iron-doors {
-  root /var/www/dvernoi_region;
-  index product.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /product.html;
-}
+  location /iron-doors {
+    root /var/www/dvernoi_region;
+    index product.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /product.html;
+  }
 
-location /accessories {
-  root /var/www/dvernoi_region;
-  index product.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /product.html;
-}
+  location /accessories {
+    root /var/www/dvernoi_region;
+    index product.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /product.html;
+  }
 
-location /furniture {
-  root /var/www/dvernoi_region;
-  index product.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /product.html;
-}
+  location /furniture {
+    root /var/www/dvernoi_region;
+    index product.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /product.html;
+  }
 
-location /cart {
-  root /var/www/dvernoi_region;
-  index cart.html;
-  proxy_http_version 1.1;
-  proxy_set_header Upgrade $http_upgrade;
-  proxy_set_header Connection 'upgrade';
-  proxy_set_header Host $host;
-  proxy_cache_bypass $http_upgrade;
-  try_files $uri $uri/ /cart.html;
+  location /cart {
+    root /var/www/dvernoi_region;
+    index cart.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /cart.html;
+  }
 }
